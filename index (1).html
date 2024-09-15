@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kaskrout Gaming</title>
+    <link rel="icon" href="favicon.png" type="image/png">
+    <style>
+        /* Custom font */
+        @font-face {
+            font-family: 'PolySans';
+            src: url('PolySans.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        /* General styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'PolySans', sans-serif;
+            background-image: url('/mnt/data/gif server.gif'); /* Using the uploaded image as background */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: white;
+            text-align: center;
+            min-height: 120vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            overflow-x: hidden;
+            background-color: #004d33; /* Dark green */
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+        }
+
+        header img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+        }
+
+        header nav {
+            display: flex;
+        }
+
+        header nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 10px;
+        }
+
+        header nav a:hover {
+            color: #66ff99; /* Light green */
+        }
+
+        main {
+            padding: 10px 10px;
+            background-color: rgba(0, 77, 51, 0.7); /* Green with transparency */
+        }
+
+        .btn {
+            font-family: 'PolySans', sans-serif;
+            background-color: #333;
+            color: white;
+            padding: 8px 25px;
+            border: none;
+            border-radius: 5px;
+            font-size: 26px;
+            cursor: pointer;
+            margin: 20px;
+        }
+
+        .btn:hover {
+            background-color: #555;
+        }
+
+        .features {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .feature {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            margin: 15px;
+            border-radius: 20px;
+            width: 300px;
+            text-align: center;
+        }
+
+        .feature img {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            font-size: 12px;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #66ff99;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="https://cdn.discordapp.com/icons/1139252129710747732/a_e795bbd22e2710aaef49247ea90bc567.gif?size=1024" alt="Kaskrout Gaming Logo">
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About Us</a>
+            <a href="#features">Features</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <main id="home">
+        <h1>Welcome to Kaskrout Gaming</h1>
+        <p>Your favorite gaming community, always ready for new challenges!</p>
+        <button class="btn" onclick="window.location.href='https://discord.gg/ZwPx8c8RAF'">Join Our Discord</button>
+
+        <section id="features" class="features">
+            <div class="feature">
+                <img src="https://www.freeiconspng.com/thumbs/trophy-png/trophy-png-23.png" alt="Tournaments Icon">
+                <h3>Competitive Tournaments</h3>
+                <p>Join our weekly tournaments with exclusive prizes!</p>
+            </div>
+            <div class="feature">
+                <img src="https://cdn.sanity.io/images/kts928pd/production/f94533d8454daadb5e58cb99264df6de5a6c8a20-512x512.png" alt="Community Icon">
+                <h3>Active Community</h3>
+                <p>Connect with gamers worldwide in our active community.</p>
+            </div>
+            <div class="feature">
+                <img src="https://i.redd.it/ak9w918zi5r81.png" alt="Minecraft Icon">
+                <h3>MINECRAFT SERVER</h3>
+                <p>Our official Minecraft server it's coming soon.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <p>&copy; 2024 Kaskrout Gaming. All rights reserved. | <a href="#">Privacy Policy</a></p>
+        <p>Follow us on social media: 
+            <a href="https://twitter.com" target="_blank">Twitter</a> | 
+            <a href="https://instagram.com" target="_blank">Instagram</a> | 
+            <a href="https://discord.gg/ZwPx8c8RAF" target="_blank">Discord</a>
+        </p>
+    </footer>
+</body>
+</html>
