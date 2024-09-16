@@ -177,6 +177,61 @@
         .dropdown-active .dropbtn i {
             transform: rotate(180deg);
         }
+        /* Animations */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            0% {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        @keyframes glow {
+            0% {
+                text-shadow: 0 0 10px #a4f9a4, 0 0 20px #a4f9a4, 0 0 30px #00ff00, 0 0 40px #00ff00, 0 0 50px #00ff00;
+            }
+            100% {
+                text-shadow: 0 0 20px #ffffff, 0 0 30px #ffffff, 0 0 40px #00ff00, 0 0 50px #00ff00;
+            }
+        }
+
+        @keyframes slideIn {
+            0% {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInText {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        .title {
+            font-size: 3rem;
+            color: #a4f9a4; /* Light green color */
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            animation: glow 2s infinite alternate;
+        }
     </style>
 </head>
 <body>
@@ -196,8 +251,8 @@
     </header>
 
     <main id="home">
-        <h1>Welcome to Kaskrout Gaming</h1>
-        <p>Your favorite gaming community, always ready for new challenges!</p>
+        <h1 class="title">Welcome to Kaskrout Gaming</h1>
+        <h2>Your favorite gaming community, always ready for new challenges!</h2>
         <button class="btn" onclick="window.location.href='https://discord.gg/ZwPx8c8RAF'">Join Our Discord</button>
 
         <section id="features" class="features">
