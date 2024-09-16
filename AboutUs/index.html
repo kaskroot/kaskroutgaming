@@ -1,1 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>About Us - Gaming Touch</title>
+    <style>
+        /* Style for the entire page */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
 
+        body {
+            background-color: #1e3d34; /* Dark green background */
+            color: #fff;
+            line-height: 1.6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            animation: fadeIn 2s ease-in-out;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Background animation for gaming effect */
+        .gaming-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://cdn.wallpapersafari.com/76/6/1oIOKI.jpg'); /* Gaming-style background */
+            background-size: cover;
+            background-position: center;
+            opacity: 0.15; /* Make it semi-transparent */
+            z-index: -1;
+            animation: backgroundMovement 10s infinite linear; /* Smooth scrolling effect */
+        }
+
+        @keyframes backgroundMovement {
+            from {
+                background-position: 0 0;
+            }
+            to {
+                background-position: 1000px 1000px;
+            }
+        }
+
+        .container {
+            max-width: 900px;
+            width: 90%;
+            text-align: center;
+            padding: 2rem;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+            animation: slideUp 1.5s ease-out;
+            z-index: 1; /* Keep it above the background */
+        }
+
+        .header {
+            margin-bottom: 3rem;
+        }
+
+        .title {
+            font-size: 3rem;
+            color: #a4f9a4; /* Light green color */
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            animation: glow 2s infinite alternate;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #ddd;
+            margin-top: 0.5rem;
+        }
+
+        .about-section {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .image-container {
+            flex: 1;
+        }
+
+        .about-img {
+            width: 300px;
+            height: auto;
+            border-radius: 50%;
+            border: 5px solid #fff;
+            animation: rotate 5s linear infinite;
+        }
+
+        .text-container {
+            flex: 2;
+            padding-left: 2rem;
+        }
+
+        .text-container h2 {
+            font-size: 2rem;
+            color: #fff;
+            margin-bottom: 1rem;
+            animation: slideIn 1s ease-in-out forwards;
+        }
+
+        .text-container p {
+            font-size: 1.1rem;
+            color: #eee;
+            margin-bottom: 1.5rem;
+            animation: fadeInText 1s ease-in-out forwards;
+        }
+
+        .footer {
+            margin-top: 2rem;
+            color: #bbb;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            0% {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes glow {
+            0% {
+                text-shadow: 0 0 10px #a4f9a4, 0 0 20px #a4f9a4, 0 0 30px #00ff00, 0 0 40px #00ff00, 0 0 50px #00ff00;
+            }
+            100% {
+                text-shadow: 0 0 20px #ffffff, 0 0 30px #ffffff, 0 0 40px #00ff00, 0 0 50px #00ff00;
+            }
+        }
+
+        @keyframes slideIn {
+            0% {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInText {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated gaming background -->
+    <div class="gaming-bg"></div>
+
+    <div class="container">
+        <header class="header">
+            <h1 class="title">About Us</h1>
+            <p class="subtitle">We are passionate about creating amazing experiences.</p>
+        </header>
+        
+        <section class="about-section">
+            <div class="image-container">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTstkOXglJUU3F222dA85fd8vSgAR4eAqi3Fbas2Sw2D1TWWe0V" alt="About us image" class="about-img">
+            </div>
+            <div class="text-container">
+                <h2>Who We Are</h2>
+                <p>We are people like you they just want to have fun and meet other people, the tunisian society gaming is growing and we happy if you guys come to visit our discord server.</p>
+                
+                <h2>Our Mission</h2>
+                <p>Our mission is you and your friends have a really good time in our server with the maximum respect for you and all the member, our staff is ready to work really hard for make a good experience for you
+.</p>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>Connect with us on our social media channels</p>
+        </footer>
+    </div>
+</body>
+</html>

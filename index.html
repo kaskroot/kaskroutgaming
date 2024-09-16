@@ -19,7 +19,7 @@
             margin: 0;
             padding: 0;
             font-family: 'PolySans', sans-serif;
-            background-image: url('/mnt/data/gif server.gif'); /* Using the uploaded image as background */
+            background-image: url('/mnt/data/gif server.gif'); /* Background image */
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -39,6 +39,7 @@
             justify-content: space-between;
             padding: 20px;
             background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+            position: relative;
         }
 
         header img {
@@ -47,23 +48,74 @@
             border-radius: 50%;
         }
 
-        header nav {
+        /* Dropdown button and menu styles with green light effect */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropbtn {
+            background-color: #66ff99; /* Light green color */
+            color: black;
+            padding: 10px 20px;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
             display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 10px 0 rgba(102, 255, 153, 0.8), 0 0 20px 0 rgba(102, 255, 153, 0.6);
         }
 
-        header nav a {
+        .dropbtn:hover {
+            background-color: #33cc77; /* Slightly darker green on hover */
+            box-shadow: 0 0 15px 5px rgba(102, 255, 153, 1); /* Green light effect */
+        }
+
+        .dropbtn i {
+            margin-left: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 60px;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.9);
+            min-width: 200px;
+            border-radius: 10px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.7);
+            z-index: 1;
+            opacity: 0;
+            transform: translateY(-20px);
+            transition: all 0.3s ease;
+        }
+
+        .dropdown-content a {
             color: white;
+            padding: 15px;
             text-decoration: none;
-            margin: 0 15px;
-            font-size: 20px;
+            display: block;
+            text-align: left;
+            font-size: 16px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        header nav a:hover {
-            color: #66ff99; /* Light green */
+        .dropdown-content a:hover {
+            background-color: #66ff99; /* Light green on hover */
+            color: black; /* Text turns black */
+        }
+
+        .dropdown-content.show {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
         }
 
         main {
-            padding: 10px 10px;
+            padding: 50px 20px;
             background-color: rgba(0, 77, 51, 0.7); /* Green with transparency */
         }
 
@@ -71,10 +123,10 @@
             font-family: 'PolySans', sans-serif;
             background-color: #333;
             color: white;
-            padding: 8px 25px;
+            padding: 15px 25px;
             border: none;
             border-radius: 5px;
-            font-size: 26px;
+            font-size: 16px;
             cursor: pointer;
             margin: 20px;
         }
@@ -94,7 +146,7 @@
             background-color: rgba(0, 0, 0, 0.5);
             padding: 20px;
             margin: 15px;
-            border-radius: 20px;
+            border-radius: 10px;
             width: 300px;
             text-align: center;
         }
@@ -120,17 +172,27 @@
         footer a:hover {
             color: #66ff99;
         }
+
+        /* Animation for dropdown button rotation */
+        .dropdown-active .dropbtn i {
+            transform: rotate(180deg);
+        }
     </style>
 </head>
 <body>
     <header>
         <img src="https://cdn.discordapp.com/icons/1139252129710747732/a_e795bbd22e2710aaef49247ea90bc567.gif?size=1024" alt="Kaskrout Gaming Logo">
-        <nav>
-            <a href="https://kaskroutgaming.lol">Home</a>
-            <a href="https://kaskroutgaming.lol/AboutUs">About Us</a>
-            <a href="#features">Features</a>
-            <a href="https://discord.com/channels/1139252129710747732/1246503956088229988">Contact</a>
-        </nav>
+        
+        <!-- Dropdown Button with Icon -->
+        <div class="dropdown">
+            <button class="dropbtn" onclick="toggleDropdown()">Menu <i>&#9662;</i></button>
+            <div class="dropdown-content" id="dropdown-menu">
+                <a href="#">Home</a>
+                <a href="AboutUs/">About Us</a>
+                <a href="#features">Features</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
     </header>
 
     <main id="home">
@@ -162,8 +224,16 @@
         <p>Follow us on social media: 
             <a href="https://twitter.com" target="_blank">Twitter</a> | 
             <a href="https://instagram.com" target="_blank">Instagram</a> | 
-            <a href="https://discord.gg/ZwPx8c8RAF" target="_blank">Discord</a>
+            <a href="https://discord.com" target="_blank">Discord</a>
         </p>
     </footer>
+
+    <script>
+        function toggleDropdown() {
+            const dropdownMenu = document.getElementById('dropdown-menu');
+            dropdownMenu.classList.toggle('show');
+            document.querySelector('.dropdown').classList.toggle('dropdown-active');
+        }
+    </script>
 </body>
 </html>
