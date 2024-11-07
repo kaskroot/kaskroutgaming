@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minecraft Server Announcement</title>
+  <style>
+    /* Dark green background color */
+    body {
+      background-color: #004d33; /* dark green */
+      color: #ffffff;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 200px;
+    }
+
+    /* Style for the main title */
+    h1 {
+      font-size: 3em;
+      color: #f3a400; /* golden yellow color */
+    }
+
+    /* Style for subtitle and description */
+    h2 {
+      color: #c9d4b1;
+      font-size: 1.5em;
+    }
+
+    /* Box for server information */
+    .server-info {
+      background-color: #1b2520;
+      border: 2px solid #f3a400;
+      border-radius: 10px;
+      padding: 20px;
+      max-width: 500px;
+      margin: 20px auto;
+    }
+
+    /* Style for join button */
+    .join-button {
+      display: inline-block;
+      background-color: #f3a400;
+      color: #21302b;
+      padding: 15px 30px;
+      font-size: 1.2em;
+      font-weight: bold;
+      border-radius: 5px;
+      text-decoration: none;
+      margin-top: 20px;
+    }
+
+    /* Hover effect for button */
+    .join-button:hover {
+      background-color: #e29300;
+    }
+
+    /* Footer section */
+    footer {
+      margin-top: 30px;
+      font-size: 0.9em;
+      color: #c9d4b1;
+    }
+
+    /* Style for video section */
+    .video-container {
+      margin-top: 40px;
+    }
+
+    /* Gallery container */
+    .gallery {
+      margin-top: 40px;
+      max-width: 600px;
+      position: relative;
+      margin: 20px auto;
+    }
+
+    /* Hide all slides by default */
+    .slide {
+      display: none;
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    /* Container for navigation buttons */
+    .nav-buttons {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+    /* Navigation buttons */
+    .prev, .next {
+      cursor: pointer;
+      padding: 10px;
+      color: #f3a400;
+      font-weight: bold;
+      font-size: 18px;
+      transition: 0.3s;
+      user-select: none;
+      margin: 0 10px;
+      border: 2px solid #f3a400;
+      border-radius: 5px;
+    }
+
+    .prev:hover, .next:hover {
+      background-color: #e29300;
+    }
+  </style>
+</head>
+<body>
+  <h1>Welcome to Our Minecraft Server!</h1>
+  <h2>Join our community and start your adventure!</h2>
+
+  <div class="server-info">
+    <p><strong>Server IP:</strong> mc.kaskroutgaming.lol:25587</p>
+    <p><strong>Version:</strong> [1.21 Fabric]</p>
+    <p><strong>Game Modes:</strong> Survival, Rp</p>
+  </div>
+
+  <a href="https://discord.gg/ZwPx8c8RAF" class="join-button">Join the Server!</a>
+
+  <div class="video-container">
+    <h2>Check Out Our Server Trailer!</h2>
+    <iframe width="600" height="338" 
+            src="https://www.youtube.com/embed/ABnQpZyGmYo" 
+            title="YouTube video player" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+    </iframe>
+  </div>
+
+  <!-- Image Gallery -->
+  <div class="gallery">
+    <h2>Server Gallery</h2>
+    <img class="slide" src="https://i.pinimg.com/736x/a8/ae/5b/a8ae5bd435ebde7f3af7d6c8b31788ad.jpg" alt="Server Image 1"> <!-- Substitute with your real link -->
+    <img class="slide" src="https://i.pinimg.com/736x/7d/19/20/7d19202a00fd203a1efacbba98aa7508.jpg" alt="Server Image 2"> <!-- Substitute with your real link -->
+    <img class="slide" src="https://i.pinimg.com/736x/62/48/d6/6248d6d35cd9b8bf5e6785f16920aa41.jpg" alt="Server Image 3"> <!-- Substitute with your real link -->
+    <img class="slide" src="https://i.pinimg.com/736x/82/43/52/824352f3cca590f602a8a5867b780c2e.jpg" alt="Server Image 4"> <!-- Substitute with your real link -->
+    <img class="slide" src="https://i.pinimg.com/736x/6e/7e/b1/6e7eb1cd8f072bf9af3e88b165be8cb9.jpg" alt="Server Image 5"> <!-- Substitute with your real link -->
+    <img class="slide" src="https://i.pinimg.com/736x/eb/06/38/eb0638b3f9a1934602cd5d6a15d9b141.jpg" alt="Server Image 6"> <!-- Substitute with your real link -->
+
+    <!-- Navigation buttons container below images -->
+    <div class="nav-buttons">
+      <span class="prev" onclick="changeSlide(-1)">&#10094; Prev</span>
+      <span class="next" onclick="changeSlide(1)">Next &#10095;</span>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2024 Minecraft Server. All rights reserved. Not affiliated with Mojang.</p>
+  </footer>
+
+  <script>
+    let slideIndex = 0;
+    showSlides(slideIndex);
+
+    // Function to change slide based on user input
+    function changeSlide(n) {
+      showSlides(slideIndex += n);
+    }
+
+    // Function to show the slide at a given index
+    function showSlides(n) {
+      const slides = document.getElementsByClassName("slide");
+      if (n >= slides.length) slideIndex = 0; // Loop back to start
+      if (n < 0) slideIndex = slides.length - 1; // Loop back to end
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none"; // Hide all slides
+      }
+      slides[slideIndex].style.display = "block"; // Show the current slide
+    }
+
+    // Auto-slide functionality
+    function autoSlide() {
+      changeSlide(1); // Move to the next slide
+      setTimeout(autoSlide, 3000); // Change slide every 3 seconds
+    }
+    
+    // Start auto-slide on page load
+    autoSlide();
+  </script>
+</body>
+</html>
