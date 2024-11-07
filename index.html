@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kaskrout Gaming</title>
     <link rel="icon" href="favicon.png" type="image/png">
-    <style>
+      <style>
         /* Custom font */
         @font-face {
             font-family: 'PolySans';
@@ -232,13 +232,21 @@
             letter-spacing: 5px;
             animation: glow 2s infinite alternate;
         }
+        /* CSS to remove link styling in the feature div */
+        .feature-link {
+            text-decoration: none;
+            color: inherit; /* Ensures text color inherits from parent, not default link color */
+        }
+
+        .feature-link h3,
+        .feature-link p {
+            color: inherit; /* Ensures the text inside h3 and p tags don't turn blue */
+        }
     </style>
 </head>
 <body>
     <header>
         <img src="https://cdn.discordapp.com/icons/1139252129710747732/a_e795bbd22e2710aaef49247ea90bc567.gif?size=1024" alt="Kaskrout Gaming Logo">
-        
-        <!-- Dropdown Button with Icon -->
         <div class="dropdown">
             <button class="dropbtn" onclick="toggleDropdown()">Menu <i>&#9662;</i></button>
             <div class="dropdown-content" id="dropdown-menu">
@@ -251,7 +259,7 @@
 
     <main id="home">
         <h1 class="title">Welcome to Kaskrout Gaming</h1>
-        <h2>Your favorite discord community, join us now!</h2>
+        <h2>Your favorite Discord community, join us now!</h2>
         <button class="btn" onclick="window.location.href='https://discord.gg/ZwPx8c8RAF'">Join Our Discord</button>
 
         <section id="features" class="features">
@@ -265,11 +273,13 @@
                 <h3>Active Community</h3>
                 <p>Connect with gamers worldwide in our active community.</p>
             </div>
-            <div class="feature">
-                <img src="https://i.redd.it/ak9w918zi5r81.png" alt="Minecraft Icon">
-                <h3>Minecraft server</h3>
-                <p>Our official Minecraft server is coming soon.</p>
-            </div>
+            <a href="Minecraft/" target="_blank" class="feature-link">
+                <div class="feature">
+                    <img src="https://i.redd.it/ak9w918zi5r81.png" alt="Minecraft Icon">
+                    <h3>Minecraft Server</h3>
+                    <p>Our official Minecraft server is here click on the icon MC.</p>
+                </div>
+            </a>
         </section>
     </main>
 
